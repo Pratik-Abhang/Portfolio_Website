@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Pratik-Abhang/Portfolio_Website/static/css/main.53ec7145.css",
+    "main.js": "/Pratik-Abhang/Portfolio_Website/static/js/main.d4853c76.js",
+    "static/js/488.963a9ec1.chunk.js": "/Pratik-Abhang/Portfolio_Website/static/js/488.963a9ec1.chunk.js",
+    "service-worker.js": "/Pratik-Abhang/Portfolio_Website/service-worker.js",
+    "index.html": "/Pratik-Abhang/Portfolio_Website/index.html",
+    "main.53ec7145.css.map": "/Pratik-Abhang/Portfolio_Website/static/css/main.53ec7145.css.map",
+    "main.d4853c76.js.map": "/Pratik-Abhang/Portfolio_Website/static/js/main.d4853c76.js.map",
+    "488.963a9ec1.chunk.js.map": "/Pratik-Abhang/Portfolio_Website/static/js/488.963a9ec1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53ec7145.css",
+    "static/js/main.d4853c76.js"
+  ]
+}

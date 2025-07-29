@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://Pratik-Abhang/Portfolio_Website",
+  "homepage": "https://pratik-abhang.github.io/Portfolio_Website",
   "private": false,
   "dependencies": {
     "cra-template-pwa": "2.0.0",

@@ -185,7 +185,7 @@ function App() {
 
     try {
       // Example: Send form data to your backend or an API
-      const response = await fetch('https://n8n.srv941220.hstgr.cloud/webhook-test/portfolio-website', {
+      const response = await fetch('https://n8n.srv941220.hstgr.cloud/webhook/portfolio-website', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

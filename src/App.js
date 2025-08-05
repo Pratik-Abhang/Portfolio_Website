@@ -173,12 +173,44 @@ function App() {
       <section id="contact" className="contact-section">
         <div className="contact-content">
           <h2>Contact</h2>
-          <form className="contact-form" onSubmit={e => e.preventDefault()}>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" className="btn btn-primary" onClick={() => window.open('https://demo-link.com')}>Send Message</button>
-          </form>
+         <form
+  className="contact-form"
+  onSubmit={async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    try {
+      // Example: Send form data to your backend or an API
+      const response = await fetch('https://n8n.srv941220.hstgr.cloud/webhook-test/portfolio-website', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully!');
+      } else {
+        alert('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while sending your message.');
+    }
+  }}
+>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit" className="btn btn-primary">Send Message</button>
+</form>
+
+
           <div className="contact-info">
             <p>Email: <a href="mailto:pratikdata30@gmail.com">pratikdata30@gmail.com</a></p>
             <div className="contact-socials">

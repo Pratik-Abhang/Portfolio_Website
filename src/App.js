@@ -173,35 +173,34 @@ function App() {
       <section id="contact" className="contact-section">
         <div className="contact-content">
           <h2>Contact</h2>
-          <form
-    className="contact-form"
-    onSubmit={async (e) => {
+         <form
+  className="contact-form"
+  onSubmit={async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.target);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
 
     try {
-      const res = await fetch("https://n8n.srv941220.hstgr.cloud/webhook-test/portfolio-website", {
-        method: "POST",
+      // Example: Send form data to your backend or an API
+      const response = await fetch('https://n8n.srv941220.hstgr.cloud/webhook-test/portfolio-website', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ name, email, message }),
       });
 
-      if (res.ok) {
-        alert("Message sent successfully!");
-        e.target.reset(); // optional
+      if (response.ok) {
+        alert('Message sent successfully!');
       } else {
-        alert("Failed to send message.");
+        alert('Failed to send message.');
       }
-    } catch (err) {
-      console.error("Error:", err);
-      alert("❌ Error sending message.");
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while sending your message.');
     }
   }}
 >
@@ -210,6 +209,7 @@ function App() {
   <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
   <button type="submit" className="btn btn-primary">Send Message</button>
 </form>
+
 
           <div className="contact-info">
             <p>Email: <a href="mailto:pratikdata30@gmail.com">pratikdata30@gmail.com</a></p>
